@@ -15,6 +15,7 @@ module BigQuery
     attr_accessor :dataset, :project_id
 
     def initialize(opts = {})
+      binding.pry
       @client = Google::APIClient.new(
         application_name: 'BigQuery ruby app',
         application_version: BigQuery::VERSION,
