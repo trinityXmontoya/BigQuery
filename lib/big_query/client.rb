@@ -28,7 +28,8 @@ module BigQuery
         audience: 'https://accounts.google.com/o/oauth2/token',
         scope: 'https://www.googleapis.com/auth/bigquery',
         issuer: opts['service_email'],
-        signing_key: key)
+        signing_key: key
+      )
 
       refresh_auth
 
