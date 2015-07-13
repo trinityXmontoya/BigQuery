@@ -15,7 +15,11 @@ module BigQuery
     attr_accessor :dataset, :project_id
 
     def initialize(opts = {})
-      @client = Google::APIClient.new()
+      @client = Google::APIClient.new(
+        application_name: 'BigQuery ruby app',
+        application_version: BigQuery::VERSION,
+        faraday_option: opts['faraday_option']
+      )
 
       begin
         key = Google::APIClient::KeyUtils.load_from_pkcs12(opts['key'], 'notasecret')
